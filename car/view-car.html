@@ -1,0 +1,248 @@
+  <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Thrifty Car Rental</title>
+    <meta
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+      name="viewport"
+    />
+    <link
+      rel="icon"
+      href="../assets/img/kaiadmin/favicon.ico"
+      type="image/x-icon"
+    />
+
+    <!-- Fonts and icons -->
+    <script src="../assets/js/plugin/webfont/webfont.min.js"></script>
+    <script>
+      WebFont.load({
+        google: { families: ["Public Sans:300,400,500,600,700"] },
+        custom: {
+          families: [
+            "Font Awesome 5 Solid",
+            "Font Awesome 5 Regular",
+            "Font Awesome 5 Brands",
+            "simple-line-icons",
+          ],
+          urls: ["../assets/css/fonts.min.css"],
+        },
+        active: function () {
+          sessionStorage.fonts = true;
+        },
+      });
+    </script>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../assets/css/plugins.min.css" />
+    <link rel="stylesheet" href="../assets/css/kaiadmin.min.css" />
+
+  </head>
+  <body>
+    <div class="wrapper">
+                           <!-- Navbar -->
+                       
+     			 <div class="main-panel">
+  				<div id="sidebar-placeholder"></div>
+					<!-- end navbar -->
+<div class="container">
+  <div class="page-inner">
+    <div class="page-header">
+      <ul class="breadcrumbs mb-3">
+        <li class="nav-home">
+          <a href="#">
+            <i class="icon-home"></i>
+          </a>
+        </li>
+        <li class="separator">
+          <i class="icon-arrow-right"></i>
+        </li>
+        <li class="nav-item">
+          <a href="#">Car</a>
+        </li>
+        <li class="separator">
+          <i class="icon-arrow-right"></i>
+        </li>
+        <li class="nav-item">
+          <a href="#">View Car</a>
+        </li>
+      </ul>
+    </div>
+       <div class="container">
+    <div class="page-inner">
+      <div class="page-header">
+        <h3 class="fw-bold mb-1">View All Cars</h3>
+      </div>
+      <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title">Car Inventory</div>
+            </div>
+                        <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered table-hover">
+                  <thead class="table-light">
+                    <tr>
+                      <th>#</th>
+                      <th>Car Name</th>
+                      <th>Type</th>
+                      <th>Colour</th>
+                      <th>Plate Number</th>
+                      <th>Price/Day (RM)</th>
+                      <th>Image</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <!-- SUV -->
+                    <tr><td>1</td><td>Toyota Fortuner</td><td>SUV</td><td>Black</td><td>ABC1234</td><td>250</td><td><img src="images/suv1.jpg" width="80"/></td><td><button class="btn btn-sm btn-warning">Edit</button> <button class="btn btn-sm btn-danger">Delete</button></td></tr>
+                    <tr><td>2</td><td>Honda CR-V</td><td>SUV</td><td>White</td><td>DEF5678</td><td>230</td><td><img src="images/suv2.jpg" width="80"/></td><td><button class="btn btn-sm btn-warning">Edit</button> <button class="btn btn-sm btn-danger">Delete</button></td></tr>
+                    <tr><td>3</td><td>Ford Everest</td><td>SUV</td><td>Grey</td><td>GHI9012</td><td>270</td><td><img src="images/suv3.jpg" width="80"/></td><td><button class="btn btn-sm btn-warning">Edit</button> <button class="btn btn-sm btn-danger">Delete</button></td></tr>
+                    <tr><td>4</td><td>Hyundai Tucson</td><td>SUV</td><td>Blue</td><td>JKL3456</td><td>220</td><td><img src="images/suv4.jpg" width="80"/></td><td><button class="btn btn-sm btn-warning">Edit</button> <button class="btn btn-sm btn-danger">Delete</button></td></tr>
+
+                    <!-- Sedan -->
+                    <tr><td>5</td><td>Honda Civic</td><td>Sedan</td><td>Red</td><td>MNO7890</td><td>180</td><td><img src="images/sedan1.jpg" width="80"/></td><td><button class="btn btn-sm btn-warning">Edit</button> <button class="btn btn-sm btn-danger">Delete</button></td></tr>
+                    <tr><td>6</td><td>Toyota Corolla</td><td>Sedan</td><td>Silver</td><td>PQR1234</td><td>170</td><td><img src="images/sedan2.jpg" width="80"/></td><td><button class="btn btn-sm btn-warning">Edit</button> <button class="btn btn-sm btn-danger">Delete</button></td></tr>
+                    <tr><td>7</td><td>Perodua Axia X</td><td>Sedan</td><td>White</td><td>STU5678</td><td>190</td><td><img src="images/sedan3.jpg" width="80"/></td><td><button class="btn btn-sm btn-warning">Edit</button> <button class="btn btn-sm btn-danger">Delete</button></td></tr>
+                    <tr><td>8</td><td>Perodua Myvi</td><td>Sedan</td><td>Blue</td><td>VWX9012</td><td>160</td><td><img src="images/sedan4.jpg" width="80"/></td><td><button class="btn btn-sm btn-warning">Edit</button> <button class="btn btn-sm btn-danger">Delete</button></td></tr>
+
+                    <!-- MPV -->
+                    <tr><td>9</td><td>Perodua Alza</td><td>MPV</td><td>Grey</td><td>YZA3456</td><td>190</td><td><img src="images/mpv1.jpg" width="80"/></td><td><button class="btn btn-sm btn-warning">Edit</button> <button class="btn btn-sm btn-danger">Delete</button></td></tr>
+                    <tr><td>10</td><td>Toyota Innova</td><td>MPV</td><td>Black</td><td>BCD7890</td><td>210</td><td><img src="images/mpv2.jpg" width="80"/></td><td><button class="btn btn-sm btn-warning">Edit</button> <button class="btn btn-sm btn-danger">Delete</button></td></tr>
+                    <tr><td>11</td><td>Mitsubishi Xpander</td><td>MPV</td><td>Silver</td><td>EFG1234</td><td>200</td><td><img src="images/mpv3.jpg" width="80"/></td><td><button class="btn btn-sm btn-warning">Edit</button> <button class="btn btn-sm btn-danger">Delete</button></td></tr>
+                    <tr><td>12</td><td>Nissan Serena</td><td>MPV</td><td>White</td><td>HIJ5678</td><td>220</td><td><img src="images/mpv4.jpg" width="80"/></td><td><button class="btn btn-sm btn-warning">Edit</button> <button class="btn btn-sm btn-danger">Delete</button></td></tr>
+
+                    <!-- 4x4 -->
+                    <tr><td>13</td><td>Ford Ranger</td><td>4x4</td><td>Blue</td><td>KLM9012</td><td>300</td><td><img src="images/4x4-1.jpg" width="80"/></td><td><button class="btn btn-sm btn-warning">Edit</button> <button class="btn btn-sm btn-danger">Delete</button></td></tr>
+                    <tr><td>14</td><td>Mitsubishi Triton</td><td>4x4</td><td>Black</td><td>NOP3456</td><td>290</td><td><img src="images/4x4-2.jpg" width="80"/></td><td><button class="btn btn-sm btn-warning">Edit</button> <button class="btn btn-sm btn-danger">Delete</button></td></tr>
+                    <tr><td>15</td><td>Toyota Hilux</td><td>4x4</td><td>Red</td><td>QRS7890</td><td>310</td><td><img src="images/4x4-3.jpg" width="80"/></td><td><button class="btn btn-sm btn-warning">Edit</button> <button class="btn btn-sm btn-danger">Delete</button></td></tr>
+                    <tr><td>16</td><td>Isuzu D-Max</td><td>4x4</td><td>White</td><td>TUV1234</td><td>305</td><td><img src="images/4x4-4.jpg" width="80"/></td><td><button class="btn btn-sm btn-warning">Edit</button> <button class="btn btn-sm btn-danger">Delete</button></td></tr>
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="card-footer text-end">
+              <a href="add-car.html" class="btn btn-success">Add New Car</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+  </div>
+        <footer class="footer">
+          <div class="container-fluid d-flex justify-content-between">
+            <nav class="pull-left">
+              <ul class="nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">
+                    Utopia
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#"> Help </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#"> Licenses </a>
+                </li>
+              </ul>
+            </nav>
+            <div class="copyright">
+              2024, made with <i class="fa fa-heart heart text-danger"></i> by
+              <a href="http://www.themekita.com">ThemeKita</a>
+            </div>
+            <div>
+              Established in
+              <a target="_blank" href="https://themewagon.com/">2018</a>.
+            </div>
+          </div>
+        </footer>
+      </div>
+
+    </div>
+    <!--   Core JS Files   -->
+    <script src="../assets/js/core/jquery-3.7.1.min.js"></script>
+    <script src="../assets/js/core/popper.min.js"></script>
+    <script src="../assets/js/core/bootstrap.min.js"></script>
+
+    <!-- jQuery Scrollbar -->
+    <script src="../assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+
+    <!-- Chart JS -->
+    <script src="../assets/js/plugin/chart.js/chart.min.js"></script>
+
+    <!-- jQuery Sparkline -->
+    <script src="../assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
+
+    <!-- Chart Circle -->
+    <script src="../assets/js/plugin/chart-circle/circles.min.js"></script>
+
+    <!-- Datatables -->
+    <script src="../assets/js/plugin/datatables/datatables.min.js"></script>
+
+    <!-- Bootstrap Notify -->
+    <script src="../assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
+
+    <!-- jQuery Vector Maps -->
+    <script src="../assets/js/plugin/jsvectormap/jsvectormap.min.js"></script>
+    <script src="../assets/js/plugin/jsvectormap/world.js"></script>
+
+    <!-- Google Maps Plugin -->
+    <script src="../assets/js/plugin/gmaps/gmaps.js"></script>
+
+    <!-- Sweet Alert -->
+    <script src="../assets/js/plugin/sweetalert/sweetalert.min.js"></script>
+
+    <!-- Kaiadmin JS -->
+    <script src="../assets/js/kaiadmin.min.js"></script>
+
+     <script>
+    // Function to highlight active nav link
+    function highlightActiveNavLink() {
+      const currentPage = window.location.pathname.split('/').pop();
+      const navLinks = document.querySelectorAll('.site-menu .nav-link');
+      
+      navLinks.forEach(link => {
+        const linkPage = link.getAttribute('href');
+        if (linkPage === currentPage) {
+          link.parentElement.classList.add('active');
+        }
+      });
+    }
+
+    // Combined fetch for navbar and footer
+    document.addEventListener('DOMContentLoaded', function() {
+      Promise.all([
+        fetch('../sidebar.html')
+      ])
+      .then(async ([navResponse, footerResponse]) => {
+        if (!navResponse.ok) throw new Error('Navbar load failed: ' + navResponse.status);
+        
+        const navbarHTML = await navResponse.text();
+        
+        document.getElementById('sidebar-placeholder').innerHTML = navbarHTML;
+        
+        highlightActiveNavLink();
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        // Fallback content
+        document.getElementById('sidebar-placeholder').innerHTML = `
+          <nav class="fallback-nav">
+            <a href="index.html">Home</a> | 
+            <a href="about.html">About</a> | 
+            <a href="contact.html">Contact</a>
+          </nav>`;
+      });
+    });
+  </script>
+  </body>
+</html>
+
+  

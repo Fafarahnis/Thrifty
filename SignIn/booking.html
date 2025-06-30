@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <title>Booking - Thrifty Car Rental</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../fonts/icomoon/style.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+    <style>
+      .site-menu .active > a { font-weight: bold; }
+      .booking-form { background: #fff; padding: 40px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+      .booking-form h2 { border-bottom: 2px solid #e6a046; padding-bottom: 10px; }
+      .datepicker { z-index: 9999 !important; }
+    </style>
+      
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <div id="navbar-placeholder"></div>
+      
+    <div class="background-page">
+      <div class="container">
+        <div class="row align-items-end ">
+          <div class="col-lg-5">
+            <div class="intro">
+              <h1><strong>Booking</strong></h1>
+              <div class="custom-breadcrumbs"><a href="index.html">Home</a> <span class="mx-2">/</span> <a href="carList.html">Listings</a> <span class="mx-2">/</span> <strong>Booking</strong></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      
+    <div class="site-section bg-light">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <div class="booking-form">
+              <h2 class="mb-4">Car Rental Booking Form</h2>
+              <!-- FIX: Changed form to submit via JS. Action="#" and method="POST" for best practice. -->
+              <form id="bookingForm" action="#" method="POST">
+                <h4 class="mb-3">Personal Information</h4>
+                <div class="row">
+                  <div class="col-md-6 mb-3"><label for="custName">Full Name*</label><input type="text" id="custName" class="form-control" placeholder="Your full name" required></div>
+                  <div class="col-md-6 mb-3"><label for="custIc">NRIC/Passport Number*</label><input type="text" id="custIc" class="form-control" placeholder="e.g. 980405143562" required pattern="[0-9]{12}" title="Please enter a valid 12-digit NRIC number"></div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 mb-3"><label for="phone">Phone Number*</label><input type="tel" id="phone" class="form-control" placeholder="e.g. 0104722897" required pattern="[0-9]{10,11}" title="Please enter a valid phone number"></div>
+                  <div class="col-md-6 mb-3"><label for="email">Email Address*</label><input type="email" id="email" class="form-control" placeholder="e.g. yourname@example.com" required></div>
+                </div>
+                <div class="mb-3"><label for="address">Address*</label><textarea id="address" class="form-control" rows="2" placeholder="Your complete address" required></textarea></div>
+                
+                <h4 class="mb-3 mt-5">Rental Information</h4>
+                <div class="row">
+                  <div class="col-md-6 mb-3"><label for="carModel">Car Model*</label><input type="text" id="carModel" class="form-control" required readonly></div>
+                  <div class="col-md-6 mb-3"><label for="carType">Car Type*</label><input type="text" id="carType" class="form-control" required readonly></div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 mb-3"><label for="rentDate">Pickup Date*</label><input type="text" id="rentDate" class="form-control datepicker" required></div>
+                  <div class="col-md-6 mb-3"><label for="returnDate">Return Date*</label><input type="text" id="returnDate" class="form-control datepicker" required></div>
+                </div>
+                <div class="mb-3"><label for="specialRequests">Special Requests</label><textarea id="specialRequests" class="form-control" rows="3" placeholder="Any additional requests or notes"></textarea></div>
+                <div class="mb-4 form-check"><input type="checkbox" class="form-check-input" id="termsAgree" required><label class="form-check-label" for="termsAgree">I agree to the <a href="#" data-bs-toggle="modal" data-bs-target="#termsModal">Terms and Conditions</a>*</label></div>
+                
+                <div class="text-right">
+                  <!-- FIX: Changed from a link to a proper submit button -->
+                  <button type="submit" class="btn btn-primary py-3 px-5">Proceed to Payment</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Terms Modal -->
+    <div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="termsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="termsModalLabel">Terms and Conditions</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><p>Detailed terms and conditions go here...</p></div></div></div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <!-- FIX: Corrected all asset paths from / to ../ -->
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/bootstrap-datepicker.min.js"></script>
+    <script src="../js/main.js"></script>
+
+<script>
+    // FIX: Full script to handle form data and pass to payment page.
+    document.addEventListener('DOMContentLoaded', function() {
+        // --- Load Navbar & Footer ---
+        Promise.all([
+            fetch('navbarSI.html'),
+            fetch('footer.html')
+        ]).then(async ([navResponse, footerResponse]) => {
+            document.getElementById('navbar-placeholder').innerHTML = await navResponse.text();
+            document.getElementById('footer-placeholder').innerHTML = await footerResponse.text();
+        }).catch(error => console.error('Error loading components:', error));
+
+        // --- Car Data (should come from an API in a real app) ---
+        const carData = {
+          'mitsubishi-pajero': { title: 'Mitsubishi Pajero 2023', type: 'SUV', price: 389 },
+          'nissan-moco': { title: 'Nissan Moco 2023', type: 'Compact', price: 199 },
+          'honda-fitta': { title: 'Honda Fitta 2023', type: 'Hatchback', price: 229 },
+          'skoda-laura': { title: 'Skoda Laura 2023', type: 'Sedan', price: 279 },
+          'mazda-laputa': { title: 'Mazda LaPuta 2023', type: 'Coupe', price: 249 },
+          'buick-lacrosse': { title: 'Buick LaCrosse 2023', type: 'Luxury Sedan', price: 349 }
+        };
+
+        // --- Pre-fill form from URL parameter ---
+        const urlParams = new URLSearchParams(window.location.search);
+        const carModelKey = urlParams.get('car');
+
+        if (carModelKey && carData[carModelKey]) {
+            const car = carData[carModelKey];
+            document.getElementById('carModel').value = car.title;
+            document.getElementById('carType').value = car.type;
+        } else {
+            alert('No car selected. Please select a car from the list.');
+            window.location.href = 'carList.html';
+        }
+
+        // --- Initialize datepicker ---
+        $('.datepicker').datepicker({
+            format: 'yyyy-mm-dd',
+            autoclose: true,
+            startDate: '0d' // Cannot select past dates
+        });
+
+        // --- Handle Form Submission ---
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Collect form data
+            const bookingDetails = {
+                customerName: document.getElementById('custName').value,
+                customerIc: document.getElementById('custIc').value,
+                phone: document.getElementById('phone').value,
+                email: document.getElementById('email').value,
+                address: document.getElementById('address').value,
+                carModel: document.getElementById('carModel').value,
+                carType: document.getElementById('carType').value,
+                rentDate: document.getElementById('rentDate').value,
+                returnDate: document.getElementById('returnDate').value,
+                specialRequests: document.getElementById('specialRequests').value,
+                carModelKey: carModelKey
+            };
+
+            // Validate dates
+            if (!bookingDetails.rentDate || !bookingDetails.returnDate) {
+                alert('Please select both pickup and return dates.');
+                return;
+            }
+            if (new Date(bookingDetails.returnDate) <= new Date(bookingDetails.rentDate)) {
+                alert('Return date must be after the pickup date.');
+                return;
+            }
+
+            // Save details to localStorage to pass to the payment page
+            localStorage.setItem('bookingDetails', JSON.stringify(bookingDetails));
+
+            // Redirect to payment page
+            window.location.href = 'payment.html';
+        });
+    });
+</script>
+</body>
+</html>

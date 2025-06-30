@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Thrifty Car Rental</title>
+    <meta
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+      name="viewport"
+    />
+    <link
+      rel="icon"
+      href="../assets/img/kaiadmin/favicon.ico"
+      type="image/x-icon"
+    />
+
+    <!-- Fonts and icons -->
+    <script src="../assets/js/plugin/webfont/webfont.min.js"></script>
+    <script>
+      WebFont.load({
+        google: { families: ["Public Sans:300,400,500,600,700"] },
+        custom: {
+          families: [
+            "Font Awesome 5 Solid",
+            "Font Awesome 5 Regular",
+            "Font Awesome 5 Brands",
+            "simple-line-icons",
+          ],
+          urls: ["../assets/css/fonts.min.css"],
+        },
+        active: function () {
+          sessionStorage.fonts = true;
+        },
+      });
+    </script>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../assets/css/plugins.min.css" />
+    <link rel="stylesheet" href="../assets/css/kaiadmin.min.css" />
+
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <link rel="stylesheet" href="../assets/css/demo.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+                          <!-- Navbar -->
+                       
+     			 <div class="main-panel">
+  				<div id="sidebar-placeholder"></div>
+					<!-- end navbar -->
+<div class="container">
+  <div class="page-inner">
+    <div class="page-header">
+      <ul class="breadcrumbs mb-3">
+        <li class="nav-home">
+          <a href="#">
+            <i class="icon-home"></i>
+          </a>
+        </li>
+        <li class="separator">
+          <i class="icon-arrow-right"></i>
+        </li>
+        <li class="nav-item">
+          <a href="#">Booking</a>
+        </li>
+        <li class="separator">
+          <i class="icon-arrow-right"></i>
+        </li>
+        <li class="nav-item">
+          <a href="#">View App Details</a>
+        </li>
+      </ul>
+    </div>
+<div class="container">
+    <div class="page-inner">
+      <div class="page-header">
+        <h3 class="fw-bold mb-3">View Applications Details</h3>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title">Customer Rental Information</div>
+            </div>
+
+<div class="card-body">
+  <form>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="bookingId">Booking ID</label>
+          <input type="text" class="form-control" id="bookingId" value="BK002" readonly>
+        </div>
+        <div class="form-group">
+          <label for="icNumber">IC Number</label>
+          <input type="text" class="form-control" id="icNumber" value="020101-14-5673" readonly>
+        </div>
+        <div class="form-group">
+          <label for="customerName">Name</label>
+          <input type="text" class="form-control" id="customerName" value="Ali Baba" readonly>
+        </div>
+        <div class="form-group">
+          <label for="phoneNumber">Phone Number</label>
+          <input type="text" class="form-control" id="phoneNumber" value="012-3456789" readonly>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" id="email" value="alibaba345@gmail.com" readonly>
+        </div>
+        <div class="form-group">
+          <label for="address">Address</label>
+          <textarea class="form-control" id="address" rows="3" readonly>No. 123, Taman Maju, 77300, Jasin, Malacca</textarea>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="carType">Car Type</label>
+          <input type="text" class="form-control" id="carType" value="Sedan" readonly>
+        </div>
+        <div class="form-group">
+          <label for="carName">Car Name/Brand</label>
+          <input type="text" class="form-control" id="carName" value="Honda Civic" readonly>
+        </div>
+        <div class="form-group">
+          <label for="rentDate">Rent Date</label>
+          <input type="text" class="form-control" id="rentDate" value="2025-06-01" readonly>
+        </div>
+        <div class="form-group">
+          <label for="returnDate">Return Date</label>
+          <input type="text" class="form-control" id="returnDate" value="2025-06-03" readonly>
+        </div>
+        <div class="form-group">
+          <label for="totalPrice">Total Price</label>
+          <input type="text" class="form-control" id="totalPrice" value="RM360" readonly>
+        </div>
+        <div style="display: flex; justify-content: flex-end; margin-top: 80px;">
+          <button type="button" class="btn btn-secondary ml-2" onclick="location.href='view.html'">Back</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+          </div>
+</div>
+</div>
+
+        <footer class="footer">
+          <div class="container-fluid d-flex justify-content-between">
+            <nav class="pull-left">
+              <ul class="nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">
+                    Utopia
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#"> Help </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#"> Licenses </a>
+                </li>
+              </ul>
+            </nav>
+            <div class="copyright">
+              2024, made with <i class="fa fa-heart heart text-danger"></i> by
+              <a href="http://www.themekita.com">ThemeKita</a>
+            </div>
+            <div>
+              Established in
+              <a target="_blank" href="https://themewagon.com/">2018</a>.
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+    <!--   Core JS Files   -->
+    <script src="../assets/js/core/jquery-3.7.1.min.js"></script>
+    <script src="../assets/js/core/popper.min.js"></script>
+    <script src="../assets/js/core/bootstrap.min.js"></script>
+
+    <!-- jQuery Scrollbar -->
+    <script src="../assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+
+    <!-- Chart JS -->
+    <script src="../assets/js/plugin/chart.js/chart.min.js"></script>
+
+    <!-- jQuery Sparkline -->
+    <script src="../assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
+
+    <!-- Chart Circle -->
+    <script src="../assets/js/plugin/chart-circle/circles.min.js"></script>
+
+    <!-- Datatables -->
+    <script src="../assets/js/plugin/datatables/datatables.min.js"></script>
+
+    <!-- Bootstrap Notify -->
+    <script src="../assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
+
+    <!-- jQuery Vector Maps -->
+    <script src="../assets/js/plugin/jsvectormap/jsvectormap.min.js"></script>
+    <script src="../assets/js/plugin/jsvectormap/world.js"></script>
+
+    <!-- Google Maps Plugin -->
+    <script src="../assets/js/plugin/gmaps/gmaps.js"></script>
+
+    <!-- Sweet Alert -->
+    <script src="../assets/js/plugin/sweetalert/sweetalert.min.js"></script>
+
+    <!-- Kaiadmin JS -->
+    <script src="../assets/js/kaiadmin.min.js"></script>
+
+    <!-- Kaiadmin DEMO methods, don't include it in your project! -->
+    <script src="../assets/js/setting-demo2.js"></script>
+         <script>
+    // Function to highlight active nav link
+    function highlightActiveNavLink() {
+      const currentPage = window.location.pathname.split('/').pop();
+      const navLinks = document.querySelectorAll('.site-menu .nav-link');
+      
+      navLinks.forEach(link => {
+        const linkPage = link.getAttribute('href');
+        if (linkPage === currentPage) {
+          link.parentElement.classList.add('active');
+        }
+      });
+    }
+
+    // Combined fetch for navbar and footer
+    document.addEventListener('DOMContentLoaded', function() {
+      Promise.all([
+        fetch('../sidebar.html')
+      ])
+      .then(async ([navResponse, footerResponse]) => {
+        if (!navResponse.ok) throw new Error('Navbar load failed: ' + navResponse.status);
+        
+        const navbarHTML = await navResponse.text();
+        
+        document.getElementById('sidebar-placeholder').innerHTML = navbarHTML;
+        
+        highlightActiveNavLink();
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        // Fallback content
+        document.getElementById('sidebar-placeholder').innerHTML = `
+          <nav class="fallback-nav">
+            <a href="index.html">Home</a> | 
+            <a href="about.html">About</a> | 
+            <a href="contact.html">Contact</a>
+          </nav>`;
+      });
+    });
+  </script>
+  </body>
+</html>

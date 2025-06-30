@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>CarRental FAQs &mdash; Frequently Asked Questions</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="../css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="../css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="../fonts/flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="../css/aos.css">
+
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+
+
+    <style>
+        /* Unique FAQ Page Styles - All classes prefixed with faq- */
+        .faq-nav-active > a {
+            font-weight: bold !important;
+            color: #e67a00 !important;
+        }
+        
+        /* FAQ Hero Section */
+        .faq-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), url('https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80') no-repeat center center);
+            background-size: cover;
+            padding: 120px 0 80px;
+            color: white;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .faq-hero-title {
+            font-size: 2.8rem;
+            font-weight: 900;
+            margin-bottom: 25px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+        
+        .faq-search-container {
+            max-width: 650px;
+            margin: 0 auto 30px;
+        }
+        
+        .faq-search-box {
+            border-radius: 50px;
+            padding: 12px 20px;
+            border: none;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        
+        .faq-search-btn {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            background: #e67a00;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 7px 20px;
+        }
+        
+        /* FAQ Content */
+        .faq-container {
+            padding: 0 0 80px;
+        }
+        
+        .faq-category-block {
+            margin-bottom: 50px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+        
+        .faq-category-header {
+            background: #f8f8f8;
+            padding: 20px 25px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .faq-category-title {
+            color: #e67a00;
+            font-size: 1.5rem;
+            margin: 0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .faq-category-title i {
+            margin-right: 12px;
+            font-size: 1.3rem;
+        }
+        
+        .faq-accordion {
+            border: none;
+        }
+        
+        .faq-question {
+            background: white;
+            border: none;
+            border-bottom: 1px solid #f0f0f0;
+            padding: 18px 25px;
+            font-weight: 600;
+            color: #333;
+            text-align: left;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-question:hover {
+            background: #fff9f2;
+            color: #e67a00;
+        }
+        
+        .faq-question:after {
+            content: '\f078';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-question[aria-expanded="true"]:after {
+            transform: rotate(180deg);
+        }
+        
+        .faq-answer {
+            padding: 20px 25px;
+            background: #fdfdfd;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .faq-answer p:last-child {
+            margin-bottom: 0;
+        }
+        
+        /* Contact Card */
+        .faq-contact-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-top: 30px;
+            border-top: 4px solid #e67a00;
+        }
+        
+        .faq-contact-title {
+            color: #e67a00;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .faq-contact-method {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .faq-contact-icon {
+            background: #fff4e8;
+            color: #e67a00;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .faq-contact-btn {
+            background: #e67a00;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 12px;
+            width: 100%;
+            font-weight: 600;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-contact-btn:hover {
+            background: #d36f00;
+            transform: translateY(-2px);
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .faq-hero {
+                padding: 80px 0 60px;
+            }
+            
+            .faq-hero-title {
+                font-size: 2.2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .faq-hero {
+                padding: 60px 0 40px;
+            }
+            
+            .faq-hero-title {
+                font-size: 1.8rem;
+            }
+            
+            .faq-category-title {
+                font-size: 1.3rem;
+            }
+            
+            .faq-question {
+                padding: 15px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="site-wrap" id="home-section">
+
+        <!-- Navbar -->
+        <div id="navbar-placeholder"></div>
+
+        <!-- FAQ Hero -->
+        <section class="faq-hero">
+            <div class="container">
+                <h1 class="faq-hero-title">How Can We Help?</h1>
+                <p class="lead mb-4">Find answers to common questions about our car rental services</p>
+                <div class="faq-search-container">
+                    <div class="position-relative">
+                        <input type="text" class="form-control faq-search-box" placeholder="Search our FAQs...">
+                        <button class="faq-search-btn">Search</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Content -->
+        <div class="container faq-container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <!-- Booking Questions -->
+                    <div class="faq-category-block">
+                        <div class="faq-category-header">
+                            <h2 class="faq-category-title"><i class="fas fa-calendar-check"></i> Booking Questions</h2>
+                        </div>
+                        <div class="faq-accordion" id="faqBooking">
+                            <!-- Question 1 -->
+                            <div class="faq-accordion-item">
+                                <button class="faq-question" data-bs-toggle="collapse" data-bs-target="#faqBooking1" aria-expanded="true" aria-controls="faqBooking1">
+                                    What do I need to rent a car?
+                                </button>
+                                <div id="faqBooking1" class="collapse show" aria-labelledby="faqBooking1" data-bs-parent="#faqBooking">
+                                    <div class="faq-answer">
+                                        <p>To rent a car with us, you'll need:</p>
+                                        <ul>
+                                            <li>A valid driver's license (held for at least 1 year)</li>
+                                            <li>A credit card in the renter's name</li>
+                                            <li>Proof of insurance (or purchase our coverage)</li>
+                                            <li>Minimum age of 21 (additional fees under 25)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Question 2 -->
+                            <div class="faq-accordion-item">
+                                <button class="faq-question collapsed" data-bs-toggle="collapse" data-bs-target="#faqBooking2" aria-expanded="false" aria-controls="faqBooking2">
+                                    Can I book without a credit card?
+                                </button>
+                                <div id="faqBooking2" class="collapse" aria-labelledby="faqBooking2" data-bs-parent="#faqBooking">
+                                    <div class="faq-answer">
+                                        <p>We require a credit card in the renter's name for all reservations. Debit cards may be accepted at some locations for payment, but a credit card is still required to secure the booking and for the security deposit.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Question 3 -->
+                            <div class="faq-accordion-item">
+                                <button class="faq-question collapsed" data-bs-toggle="collapse" data-bs-target="#faqBooking3" aria-expanded="false" aria-controls="faqBooking3">
+                                    How do I modify or cancel my reservation?
+                                </button>
+                                <div id="faqBooking3" class="collapse" aria-labelledby="faqBooking3" data-bs-parent="#faqBooking">
+                                    <div class="faq-answer">
+                                        <p>You can modify or cancel your reservation:</p>
+                                        <ul>
+                                            <li>Online through your account</li>
+                                            <li>Via our mobile app</li>
+                                            <li>By calling 1-800-RENT-CAR</li>
+                                        </ul>
+                                        <p>Cancellations made more than 24 hours before pickup are free. Late cancellations may incur a fee.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Rental Policies -->
+                    <div class="faq-category-block">
+                        <div class="faq-category-header">
+                            <h2 class="faq-category-title"><i class="fas fa-file-alt"></i> Rental Policies</h2>
+                        </div>
+                        <div class="faq-accordion" id="faqPolicies">
+                            <!-- Question 4 -->
+                            <div class="faq-accordion-item">
+                                <button class="faq-question" data-bs-toggle="collapse" data-bs-target="#faqPolicies1" aria-expanded="true" aria-controls="faqPolicies1">
+                                    What is your fuel policy?
+                                </button>
+                                <div id="faqPolicies1" class="collapse show" aria-labelledby="faqPolicies1" data-bs-parent="#faqPolicies">
+                                    <div class="faq-answer">
+                                        <p>Our standard policy is "full-to-full":</p>
+                                        <ul>
+                                            <li>You receive the car with a full tank</li>
+                                            <li>Return it with a full tank</li>
+                                            <li>If returned with less fuel, we'll charge for the missing fuel plus a service fee</li>
+                                        </ul>
+                                        <p>We also offer prepaid fuel options at discounted rates.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Question 5 -->
+                            <div class="faq-accordion-item">
+                                <button class="faq-question collapsed" data-bs-toggle="collapse" data-bs-target="#faqPolicies2" aria-expanded="false" aria-controls="faqPolicies2">
+                                    Can someone else drive the rental car?
+                                </button>
+                                <div id="faqPolicies2" class="collapse" aria-labelledby="faqPolicies2" data-bs-parent="#faqPolicies">
+                                    <div class="faq-answer">
+                                        <p>Additional drivers must:</p>
+                                        <ul>
+                                            <li>Be at least 21 years old</li>
+                                            <li>Present a valid license at the counter</li>
+                                            <li>Be listed on the rental agreement</li>
+                                        </ul>
+                                        <p>There's a small daily fee for each additional driver (spouses may drive free with documentation).</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Card -->
+                <div class="col-lg-4">
+                    <div class="faq-contact-card">
+                        <h3 class="faq-contact-title">Need More Help?</h3>
+                        <p>Our customer service team is available 24/7 to assist you.</p>
+                        
+                        <div class="faq-contact-method">
+                            <div class="faq-contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h5>Call Us</h5>
+                                <p class="mb-0">1-800-RENT-CAR</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-contact-method">
+                            <div class="faq-contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h5>Email Us</h5>
+                                <p class="mb-0">support@carrental.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-contact-method">
+                            <div class="faq-contact-icon">
+                                <i class="fas fa-comment-dots"></i>
+                            </div>
+                            <div>
+                                <h5>Live Chat</h5>
+                                <p class="mb-0">Available 24/7 on our website</p>
+                            </div>
+                        </div>
+                        
+                        <button class="faq-contact-btn">Contact Support Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div id="footer-placeholder"></div>
+    </div>
+
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/owl.carousel.min.js"></script>
+    <script src="../js/jquery.sticky.js"></script>
+    <script src="../js/jquery.waypoints.min.js"></script>
+    <script src="../js/jquery.animateNumber.min.js"></script>
+    <script src="../js/jquery.fancybox.min.js"></script>
+    <script src="../js/jquery.easing.1.3.js"></script>
+    <script src="../js/bootstrap-datepicker.min.js"></script>
+    <script src="../js/aos.js"></script>
+
+    <script src="../js/main.js"></script>
+
+    <script>
+        // Function to highlight active nav link
+        function highlightActiveNavLink() {
+            const currentPage = window.location.pathname.split('/').pop();
+            const navLinks = document.querySelectorAll('.site-menu .nav-link');
+            
+            navLinks.forEach(link => {
+                const linkPage = link.getAttribute('href');
+                if (linkPage === currentPage) {
+                    link.parentElement.classList.add('faq-nav-active');
+                }
+            });
+        }
+
+        // Combined fetch for navbar and footer
+        document.addEventListener('DOMContentLoaded', function() {
+            Promise.all([
+                fetch('navbarSI.html'),
+                fetch('footer.html')
+            ])
+            .then(async ([navResponse, footerResponse]) => {
+                if (!navResponse.ok) throw new Error('Navbar load failed: ' + navResponse.status);
+                if (!footerResponse.ok) throw new Error('Footer load failed: ' + footerResponse.status);
+                
+                const navbarHTML = await navResponse.text();
+                const footerHTML = await footerResponse.text();
+                
+                document.getElementById('navbar-placeholder').innerHTML = navbarHTML;
+                document.getElementById('footer-placeholder').innerHTML = footerHTML;
+                
+                highlightActiveNavLink();
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                // Fallback content
+                document.getElementById('navbar-placeholder').innerHTML = `
+                    <nav class="fallback-nav">
+                        <a href="index.html">Home</a> | 
+                        <a href="about.html">About</a> | 
+                        <a href="contact.html">Contact</a>
+                    </nav>`;
+                document.getElementById('footer-placeholder').innerHTML = `
+                    <footer class="fallback-footer">
+                        <p>© ${new Date().getFullYear()} My Website</p>
+                    </footer>`;
+            });
+            
+            // FAQ search functionality
+            $('.faq-search-btn').click(function() {
+                const searchTerm = $('.faq-search-box').val().toLowerCase();
+                if (searchTerm) {
+                    $('.faq-accordion-item').each(function() {
+                        const question = $(this).find('.faq-question').text().toLowerCase();
+                        const answer = $(this).find('.faq-answer').text().toLowerCase();
+                        
+                        if (question.includes(searchTerm)) {
+                            $(this).show();
+                            $(this).find('.collapse').addClass('show');
+                        } else if (answer.includes(searchTerm)) {
+                            $(this).show();
+                            $(this).find('.collapse').addClass('show');
+                        } else {
+                            $(this).hide();
+                        }
+                    });
+                } else {
+                    $('.faq-accordion-item').show();
+                    $('.collapse').removeClass('show');
+                    $('.faq-question').addClass('collapsed');
+                }
+            });
+            
+            // Initialize Bootstrap tooltips
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
+</body>
+
+</html>
