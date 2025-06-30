@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Car Details - CarRental</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <!-- Use same CSS files as carlist.html -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../fonts/icomoon/style.css">
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/bootstrap-datepicker.css">
+  <link rel="stylesheet" href="../css/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="../css/owl.carousel.min.css">
+  <link rel="stylesheet" href="../css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="../fonts/flaticon/font/flaticon.css">
+  <link rel="stylesheet" href="../css/aos.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="h.ttps://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/other.css">
+  <style>
+    .car-gallery {
+      margin-top: -50px;
+    }
+    
+    .main-image {
+      height: 400px;
+      object-fit: cover;
+      border-radius: 5px;
+      width: 100%;
+    }
+    
+    .spec-icon {
+      color: #e6a046;
+      font-size: 1.5rem;
+      width: 40px;
+    }
+    
+    .feature-badge {
+      background-color: #f8e0c5;
+      color: #2d2d2d;
+      padding: 8px 15px;
+      border-radius: 20px;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      display: inline-block;
+    }
+    
+    .thumbnail {
+      width: 80px;
+      height: 60px;
+      object-fit: cover;
+      margin-right: 10px;
+      cursor: pointer;
+      border: 2px solid transparent;
+      border-radius: 4px;
+    }
+    
+    .thumbnail:hover, .thumbnail.active {
+      border-color: #e6a046;
+    }
+    
+    .specs-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+    
+    @media (max-width: 768px) {
+      .specs-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .main-image {
+        height: 250px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="site-wrap">
+    <!-- Navbar -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- Hero Section -->
+    <div class="background-page">
+      <div class="container">
+        <div class="row align-items-end">
+          <div class="col-lg-5">
+            <div class="intro">
+              <h1><strong id="detail-title">Car Details</strong></h1>
+              <div class="custom-breadcrumbs">
+                <a href="/">Home</a> 
+                <span class="mx-2">/</span> 
+                <a href="carlist">Listings</a>
+                <span class="mx-2">/</span> 
+                <strong id="detail-breadcrumb">Details</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="site-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8">
+            <div class="car-gallery mb-4">
+              <img id="main-image" src="" class="main-image img-fluid">
+              <div class="mt-3" id="thumbnails"></div>
+            </div>
+            
+            <div class="mb-5 bg-white p-4 rounded">
+              <h3 class="mb-4">Description</h3>
+              <p id="detail-description"></p>
+              
+              <h3 class="mb-4 mt-5">Specifications</h3>
+              <div class="specs-grid">
+                <div class="d-flex mb-3">
+                  <div class="spec-icon">
+                    <i class="fas fa-car"></i>
+                  </div>
+                  <div>
+                    <h5 class="mb-1">Type</h5>
+                    <p class="text-muted" id="detail-type"></p>
+                  </div>
+                </div>
+                
+                <div class="d-flex mb-3">
+                  <div class="spec-icon">
+                    <i class="fas fa-gas-pump"></i>
+                  </div>
+                  <div>
+                    <h5 class="mb-1">Fuel Efficiency</h5>
+                    <p class="text-muted" id="detail-fuel"></p>
+                  </div>
+                </div>
+                
+                <div class="d-flex mb-3">
+                  <div class="spec-icon">
+                    <i class="fas fa-cogs"></i>
+                  </div>
+                  <div>
+                    <h5 class="mb-1">Transmission</h5>
+                    <p class="text-muted" id="detail-transmission"></p>
+                  </div>
+                </div>
+                
+                <div class="d-flex mb-3">
+                  <div class="spec-icon">
+                    <i class="fas fa-users"></i>
+                  </div>
+                  <div>
+                    <h5 class="mb-1">Capacity</h5>
+                    <p class="text-muted" id="detail-capacity"></p>
+                  </div>
+                </div>
+                
+                <div class="d-flex mb-3">
+                  <div class="spec-icon">
+                    <i class="fas fa-suitcase"></i>
+                  </div>
+                  <div>
+                    <h5 class="mb-1">Luggage</h5>
+                    <p class="text-muted" id="detail-luggage"></p>
+                  </div>
+                </div>
+                
+                <div class="d-flex mb-3">
+                  <div class="spec-icon">
+                    <i class="fas fa-door-open"></i>
+                  </div>
+                  <div>
+                    <h5 class="mb-1">Doors</h5>
+                    <p class="text-muted" id="detail-doors"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-4">
+            <div class="bg-white p-4 rounded sticky-top" style="top: 20px;">
+              <h2 class="mb-3" id="detail-model"></h2>
+              <h4 class="text-primary mb-4">$<span id="detail-price"></span> <small>/ day</small></h4>
+              
+              <div class="mb-4">
+                <h5 class="mb-3">Features</h5>
+                <div id="detail-features"></div>
+              </div>
+              
+              <a href="signinup.html" class="btn btn-primary btn-block py-3">Rent This Car</a>
+              
+              <div class="mt-4 pt-3 border-top">
+                <h5 class="mb-3">Quick Info</h5>
+                <div class="d-flex mb-2">
+                  <div class="spec-icon">
+                    <i class="fas fa-calendar-alt"></i>
+                  </div>
+                  <div>
+                    <p class="text-muted mb-0">Minimum rental: 1 day</p>
+                  </div>
+                </div>
+                <div class="d-flex mb-2">
+                  <div class="spec-icon">
+                    <i class="fas fa-user"></i>
+                  </div>
+                  <div>
+                    <p class="text-muted mb-0">Minimum age: 19 years</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+  </div>
+
+  <!-- Same scripts as carlist.html -->
+  <script src="../js/jquery-3.3.1.min.js"></script>
+  <script src="../js/popper.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/owl.carousel.min.js"></script>
+  <script src="../js/jquery.sticky.js"></script>
+  <script src="../js/jquery.waypoints.min.js"></script>
+  <script src="../js/jquery.animateNumber.min.js"></script>
+  <script src="../js/jquery.fancybox.min.js"></script>
+  <script src="../js/jquery.easing.1.3.js"></script>
+  <script src="../js/bootstrap-datepicker.min.js"></script>
+  <script src="../js/aos.js"></script>
+  <script src="../js/main.js"></script>
+  
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Car database
+    const carData = {
+      'mitsubishi-pajero': {
+        title: 'Mitsubishi Pajero 2023',
+        price: '389',
+        type: 'SUV',
+        images: ['car_6.jpg', 'car_6_alt1.jpg', 'car_6_alt2.jpg'],
+        description: 'The Mitsubishi Pajero offers rugged reliability with premium comfort. Perfect for both city driving and off-road adventures with its powerful engine and advanced 4WD system.',
+        features: ['4WD System', 'Bluetooth', 'Backup Camera', 'Navigation', 'A/C', 'Premium Audio'],
+        fuel: '18 MPG City / 24 MPG Hwy',
+        transmission: '5-Speed Automatic',
+        capacity: '5 Passengers',
+        luggage: '8 Bags',
+        doors: '4'
+      },
+      'nissan-moco': {
+        title: 'Nissan Moco 2023',
+        price: '199',
+        type: 'Compact',
+        images: ['car_5.jpg', 'car_5_alt1.jpg', 'car_5_alt2.jpg'],
+        description: 'Perfect for city driving with great fuel economy. The Nissan Moco combines compact dimensions with surprising interior space and modern technology features.',
+        features: ['Bluetooth', 'A/C', 'Keyless Entry', 'Rear Camera'],
+        fuel: '30 MPG City / 38 MPG Hwy',
+        transmission: 'CVT Automatic',
+        capacity: '4 Passengers',
+        luggage: '2 Bags',
+        doors: '4'
+      },
+      'honda-fitta': {
+        title: 'Honda Fitta 2023',
+        price: '229',
+        type: 'Hatchback',
+        images: ['car_4.jpg', 'car_4_alt1.jpg', 'car_4_alt2.jpg'],
+        description: 'Spacious hatchback with versatile cargo space. The Honda Fitta offers excellent fuel efficiency and a comfortable ride with Honda\'s renowned reliability.',
+        features: ['Navigation', 'A/C', 'Rear Camera', 'Apple CarPlay'],
+        fuel: '28 MPG City / 36 MPG Hwy',
+        transmission: '6-Speed Automatic',
+        capacity: '5 Passengers',
+        luggage: '3 Bags',
+        doors: '4'
+      },
+      'skoda-laura': {
+        title: 'Skoda Laura 2023',
+        price: '279',
+        type: 'Sedan',
+        images: ['car_3.jpg', 'car_3_alt1.jpg', 'car_3_alt2.jpg'],
+        description: 'Elegant sedan with premium features. The Skoda Laura combines European styling with exceptional comfort and a range of high-tech features for an enjoyable driving experience.',
+        features: ['Leather Seats', 'Sunroof', 'Premium Audio', 'Navigation'],
+        fuel: '26 MPG City / 34 MPG Hwy',
+        transmission: '7-Speed DSG',
+        capacity: '5 Passengers',
+        luggage: '4 Bags',
+        doors: '4'
+      },
+      'mazda-laputa': {
+        title: 'Mazda LaPuta 2023',
+        price: '249',
+        type: 'Coupe',
+        images: ['car_2.jpg', 'car_2_alt1.jpg', 'car_2_alt2.jpg'],
+        description: 'Sporty coupe with excellent handling. The Mazda LaPuta delivers an engaging driving experience with its responsive steering and peppy engine, wrapped in a stylish design.',
+        features: ['Sport Mode', 'Premium Audio', 'Keyless Start', 'Rear Spoiler'],
+        fuel: '25 MPG City / 32 MPG Hwy',
+        transmission: '6-Speed Manual',
+        capacity: '4 Passengers',
+        luggage: '2 Bags',
+        doors: '2'
+      },
+      'buick-lacrosse': {
+        title: 'Buick LaCrosse 2023',
+        price: '349',
+        type: 'Luxury Sedan',
+        images: ['car_1.jpg', 'car_1_alt1.jpg', 'car_1_alt2.jpg'],
+        description: 'Luxury sedan with premium comfort. The Buick LaCrosse offers a quiet, refined ride with high-end materials and advanced technology features for maximum comfort.',
+        features: ['Heated Seats', 'Dual-Zone Climate', 'Premium Audio', 'Navigation'],
+        fuel: '22 MPG City / 30 MPG Hwy',
+        transmission: '9-Speed Automatic',
+        capacity: '5 Passengers',
+        luggage: '5 Bags',
+        doors: '4'
+      }
+    };
+
+    // Get car model from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const carModel = urlParams.get('car');
+    
+    if (carData[carModel]) {
+      const car = carData[carModel];
+      
+      // Update page content
+      document.title = `${car.title} - CarRental`;
+      document.getElementById('detail-title').textContent = car.title;
+      document.getElementById('detail-breadcrumb').textContent = car.title;
+      document.getElementById('detail-model').textContent = car.title;
+      document.getElementById('detail-price').textContent = car.price;
+      document.getElementById('detail-type').textContent = car.type;
+      document.getElementById('detail-description').textContent = car.description;
+      document.getElementById('detail-fuel').textContent = car.fuel;
+      document.getElementById('detail-transmission').textContent = car.transmission;
+      document.getElementById('detail-capacity').textContent = car.capacity;
+      document.getElementById('detail-luggage').textContent = car.luggage;
+      document.getElementById('detail-doors').textContent = car.doors;
+      
+      // Set main image
+      const mainImage = document.getElementById('main-image');
+      mainImage.src = `../../images/${car.images[0]}`;
+      mainImage.alt = car.title;
+      
+      // Create thumbnails
+      const thumbnailsContainer = document.getElementById('thumbnails');
+      car.images.forEach((image, index) => {
+        const thumbnail = document.createElement('img');
+        thumbnail.src = `../images/${image}`;
+        thumbnail.className = 'thumbnail' + (index === 0 ? ' active' : '');
+        thumbnail.alt = `${car.title} ${index + 1}`;
+        thumbnail.onclick = function() {
+          // Update main image
+          mainImage.src = this.src;
+          
+          // Update active thumbnail
+          document.querySelectorAll('.thumbnail').forEach(img => {
+            img.classList.remove('active');
+          });
+          this.classList.add('active');
+        };
+        thumbnailsContainer.appendChild(thumbnail);
+      });
+      
+      // Create feature badges
+      const featuresContainer = document.getElementById('detail-features');
+      featuresContainer.innerHTML = car.features.map(feature => 
+        `<span class="feature-badge"><i class="fas fa-check"></i> ${feature}</span>`
+      ).join('');
+    } else {
+      // Car not found - redirect to listings
+      window.location.href = 'carlist';
+    }
+    
+    // Load navbar and footer
+    Promise.all([
+      fetch('navbarSU.html'),
+      fetch('footer.html')
+    ]).then(async ([navResponse, footerResponse]) => {
+      document.getElementById('navbar-placeholder').innerHTML = await navResponse.text();
+      document.getElementById('footer-placeholder').innerHTML = await footerResponse.text();
+    }).catch(error => {
+      console.error('Error loading components:', error);
+    });
+  });
+  </script>
+</body>
+</html>

@@ -1,0 +1,251 @@
+  <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Thrifty Car Rental</title>
+    <meta
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+      name="viewport"
+    />
+    <link
+      rel="icon"
+      href="../assets/img/kaiadmin/favicon.ico"
+      type="image/x-icon"
+    />
+
+    <!-- Fonts and icons -->
+    <script src="../assets/js/plugin/webfont/webfont.min.js"></script>
+    <script>
+      WebFont.load({
+        google: { families: ["Public Sans:300,400,500,600,700"] },
+        custom: {
+          families: [
+            "Font Awesome 5 Solid",
+            "Font Awesome 5 Regular",
+            "Font Awesome 5 Brands",
+            "simple-line-icons",
+          ],
+          urls: ["../assets/css/fonts.min.css"],
+        },
+        active: function () {
+          sessionStorage.fonts = true;
+        },
+      });
+    </script>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../assets/css/plugins.min.css" />
+    <link rel="stylesheet" href="../assets/css/kaiadmin.min.css" />
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+                          <!-- Navbar -->
+                       
+     			 <div class="main-panel">
+  				<div id="sidebar-placeholder"></div>
+					<!-- end navbar -->
+<div class="container">
+  <div class="page-inner">
+    <div class="page-header">
+      <ul class="breadcrumbs mb-3">
+        <li class="nav-home">
+          <a href="#">
+            <i class="icon-home"></i>
+          </a>
+        </li>
+        <li class="separator">
+          <i class="icon-arrow-right"></i>
+        </li>
+        <li class="nav-item">
+          <a href="#">Car</a>
+        </li>
+        <li class="separator">
+          <i class="icon-arrow-right"></i>
+        </li>
+        <li class="nav-item">
+          <a href="#">Update Car Information</a>
+        </li>
+      </ul>
+    </div>
+<div class="container">
+    <div class="page-inner">
+      <div class="page-header">
+        <h3 class="fw-bold mb-3">Update Car Information</h3>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title">Edit Car Details</div>
+            </div>
+            <div class="card-body">
+              <form>
+                <div class="row">
+                  <div class="col-md-6 col-lg-4">
+                    <div class="form-group">
+                      <label for="carName">Car Name/Brand</label>
+                      <input type="text" class="form-control" id="carName" value="Toyota Fortuner">
+                    </div>
+                    <div class="form-group">
+                      <label for="carType">Car Type</label>
+                      <select class="form-control" id="carType">
+                        <option>SUV</option>
+                        <option>MPV</option>
+                        <option>Sedan</option>
+                        <option>4x4</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="carColor">Car Colour</label>
+                      <input type="text" class="form-control" id="carColor" value="Black">
+                    </div>
+                    <div class="form-group">
+                      <label for="plateNumber">Plate Number</label>
+                      <input type="text" class="form-control" id="plateNumber" value="ABC1234">
+                    </div>
+                    <div class="form-group">
+                      <label for="carStatus">Status</label>
+                      <select class="form-control" id="carStatus">
+                        <option>Available</option>
+                        <option>Not Available</option>
+                        <option>In Maintenance</option>
+                      </select>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="pricePerDay">Price Per Day (RM)</label>
+                      <input type="number" class="form-control" id="pricePerDay" value="250">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="carImage">Car Image</label>
+                      <input type="file" class="form-control" id="carImage" accept="image/*">
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="card-action">
+              <a href="view-car.html" class="btn btn-success">Update</a>
+              <a href="view-car.html" class="btn btn-secondary">Cancel</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+        <footer class="footer">
+          <div class="container-fluid d-flex justify-content-between">
+            <nav class="pull-left">
+              <ul class="nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">
+                    Utopia
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#"> Help </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#"> Licenses </a>
+                </li>
+              </ul>
+            </nav>
+            <div class="copyright">
+              2024, made with <i class="fa fa-heart heart text-danger"></i> by
+              <a href="http://www.themekita.com">ThemeKita</a>
+            </div>
+            <div>
+              Established in
+              <a target="_blank" href="https://themewagon.com/">2018</a>.
+            </div>
+          </div>
+        </footer>
+      </div>
+
+    </div>
+    <!--   Core JS Files   -->
+    <script src="../assets/js/core/jquery-3.7.1.min.js"></script>
+    <script src="../assets/js/core/popper.min.js"></script>
+    <script src="../assets/js/core/bootstrap.min.js"></script>
+
+    <!-- jQuery Scrollbar -->
+    <script src="../assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+
+    <!-- Chart JS -->
+    <script src="../assets/js/plugin/chart.js/chart.min.js"></script>
+
+    <!-- jQuery Sparkline -->
+    <script src="../assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
+
+    <!-- Chart Circle -->
+    <script src="../assets/js/plugin/chart-circle/circles.min.js"></script>
+
+    <!-- Datatables -->
+    <script src="../assets/js/plugin/datatables/datatables.min.js"></script>
+
+    <!-- Bootstrap Notify -->
+    <script src="../assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
+
+    <!-- jQuery Vector Maps -->
+    <script src="../assets/js/plugin/jsvectormap/jsvectormap.min.js"></script>
+    <script src="../assets/js/plugin/jsvectormap/world.js"></script>
+
+    <!-- Google Maps Plugin -->
+    <script src="../assets/js/plugin/gmaps/gmaps.js"></script>
+
+    <!-- Sweet Alert -->
+    <script src="../assets/js/plugin/sweetalert/sweetalert.min.js"></script>
+
+    <!-- Kaiadmin JS -->
+    <script src="../assets/js/kaiadmin.min.js"></script>
+
+     <script>
+    // Function to highlight active nav link
+    function highlightActiveNavLink() {
+      const currentPage = window.location.pathname.split('/').pop();
+      const navLinks = document.querySelectorAll('.site-menu .nav-link');
+      
+      navLinks.forEach(link => {
+        const linkPage = link.getAttribute('href');
+        if (linkPage === currentPage) {
+          link.parentElement.classList.add('active');
+        }
+      });
+    }
+
+    // Combined fetch for navbar and footer
+    document.addEventListener('DOMContentLoaded', function() {
+      Promise.all([
+        fetch('../sidebar.html')
+      ])
+      .then(async ([navResponse, footerResponse]) => {
+        if (!navResponse.ok) throw new Error('Navbar load failed: ' + navResponse.status);
+        
+        const navbarHTML = await navResponse.text();
+        
+        document.getElementById('sidebar-placeholder').innerHTML = navbarHTML;
+        
+        highlightActiveNavLink();
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        // Fallback content
+        document.getElementById('sidebar-placeholder').innerHTML = `
+          <nav class="fallback-nav">
+            <a href="index.html">Home</a> | 
+            <a href="about.html">About</a> | 
+            <a href="contact.html">Contact</a>
+          </nav>`;
+      });
+    });
+  </script>
+  </body>
+</html>
+
+  
